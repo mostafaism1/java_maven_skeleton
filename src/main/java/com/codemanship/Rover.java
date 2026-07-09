@@ -26,8 +26,13 @@ public class Rover {
 
     public void execute(String commands) {
         for (char command : commands.toCharArray()) {
-            if (command == 'F' && direction == Direction.NORTH) {
-                y++;
+            if (command == 'F') {
+                switch (direction) {
+                    case NORTH -> y++;
+                    case SOUTH -> y--;
+                    case EAST  -> x++;
+                    case WEST  -> x--;
+                }
             }
         }
     }

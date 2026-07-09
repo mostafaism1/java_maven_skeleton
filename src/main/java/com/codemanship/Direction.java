@@ -1,5 +1,5 @@
 package com.codemanship;
 
 public enum Direction {
-    NORTH
+    NORTH, EAST, SOUTH, WEST
 }

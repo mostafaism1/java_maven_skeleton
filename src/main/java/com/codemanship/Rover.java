@@ -2,8 +2,8 @@ package com.codemanship;
 
 public class Rover {
 
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private final Direction direction;
 
     public Rover(int x, int y, Direction direction) {
@@ -22,5 +22,13 @@ public class Rover {
 
     public Direction getDirection() {
         return direction;
+    }
+
+    public void execute(String commands) {
+        for (char command : commands.toCharArray()) {
+            if (command == 'F' && direction == Direction.NORTH) {
+                y++;
+            }
+        }
     }
 }

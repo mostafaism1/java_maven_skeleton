@@ -29,19 +29,9 @@ public class Rover {
     public void execute(String commands) {
         for (char command : commands.toCharArray()) {
             if (command == 'F') {
-                position = switch (direction) {
-                    case NORTH -> position.translate(0, 1);
-                    case SOUTH -> position.translate(0, -1);
-                    case EAST  -> position.translate(1, 0);
-                    case WEST  -> position.translate(-1, 0);
-                };
+                position = direction.forward(position);
             } else if (command == 'B') {
-                position = switch (direction) {
-                    case NORTH -> position.translate(0, -1);
-                    case SOUTH -> position.translate(0, 1);
-                    case EAST  -> position.translate(-1, 0);
-                    case WEST  -> position.translate(1, 0);
-                };
+                position = direction.backward(position);
             }
         }
     }

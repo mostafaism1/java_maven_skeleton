@@ -25,4 +25,8 @@ public enum Direction {
     public Direction turnRight() {
         return values()[(ordinal() + 1) % values().length];
     }
+
+    public Direction turnLeft() {
+        return values()[(ordinal() + values().length - 1) % values().length];
+    }
 }

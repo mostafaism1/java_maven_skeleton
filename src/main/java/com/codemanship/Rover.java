@@ -34,6 +34,8 @@ public class Rover {
                 position = direction.backward(position);
             } else if (command == 'R') {
                 direction = direction.turnRight();
+            } else if (command == 'L') {
+                direction = direction.turnLeft();
             }
         }
     }

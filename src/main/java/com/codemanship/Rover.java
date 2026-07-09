@@ -3,7 +3,7 @@ package com.codemanship;
 public class Rover {
 
     private Point position;
-    private final Direction direction;
+    private Direction direction;
 
     public Rover(int x, int y, Direction direction) {
         this.position = new Point(x, y);
@@ -32,6 +32,8 @@ public class Rover {
                 position = direction.forward(position);
             } else if (command == 'B') {
                 position = direction.backward(position);
+            } else if (command == 'R') {
+                direction = direction.turnRight();
             }
         }
     }

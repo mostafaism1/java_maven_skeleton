@@ -21,4 +21,8 @@ public enum Direction {
     public Point backward(Point p) {
         return p.translate(-dx, -dy);
     }
+
+    public Direction turnRight() {
+        return values()[(ordinal() + 1) % values().length];
+    }
 }
